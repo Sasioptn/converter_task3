@@ -1,0 +1,16 @@
+<html>
+<body>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+</form>
+</body>
+</html>
